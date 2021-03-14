@@ -107,9 +107,41 @@ class Player
         }
     }
     
-    func selectCharacter()
+    func selectCharacter(characters : [Character]) -> Character
     {
+        var perso = Character(characterName: "", life: 0, typeName: "")
+        var charselect = false
+        let persona = characters
+       
+        print("Veuillez choisir le personnage de votre equipe")
         
+        
+        
+        for (index, character)  in characterPlayers.enumerated()
+        {
+            print("\(index+1). \(character.characterName) le \(character.typeName) \(character.life) hp \n")
+            
+        }
+        
+        while charselect == false
+        {
+            if let readline = readLine()
+            {
+                if let choiceCharacter = Int(readline)
+                {
+                    if choiceCharacter <= 3 && choiceCharacter >= 1
+                    {
+                        perso = persona[choiceCharacter - 1]
+                        charselect = true
+                    }
+                    else
+                    {
+                        print("Le numero du personnage choisit doit être comprit entre 1 et 3")
+                    }
+                }
+            }
+        }
+        return perso
     }
     
     

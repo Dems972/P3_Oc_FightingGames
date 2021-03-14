@@ -51,15 +51,15 @@ class Character
         return true
     }
     
-    func attack (eneny: Character)
+    func attack (enemy: Character)
     {
-        print("\(characterName), attaque \(eneny.characterName)")
+        print("\(characterName), attaque \(enemy.characterName)")
         
-        if eneny.life > 0
+        if enemy.life > 0
         {
             //faire mon calcule
-            eneny.life = eneny.life - defautWeapon.damage
-            print("\(eneny.characterName) a perdu \(defautWeapon) il lui reste \(eneny.life)")
+            enemy.life = enemy.life - defautWeapon.damage
+            print("\(enemy.characterName) a perdu \(defautWeapon.damage) il lui reste \(enemy.life)")
         }
         //verifier si il est en vie faire une methode a par
         // 

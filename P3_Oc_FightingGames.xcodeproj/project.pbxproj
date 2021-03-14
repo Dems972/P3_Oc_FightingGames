@@ -12,6 +12,7 @@
 		BA52E05625E13C54000055D7 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E05525E13C54000055D7 /* Player.swift */; };
 		BA52E05D25E1B23C000055D7 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E05C25E1B23C000055D7 /* Character.swift */; };
 		BA52E06025E2E6B1000055D7 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA52E05F25E2E6B1000055D7 /* Weapon.swift */; };
+		BA72B50A25FD3B3F00965267 /* Wand.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA72B50925FD3B3F00965267 /* Wand.swift */; };
 		BAF4327725E3DD8E0021FF1F /* Sword.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF4327625E3DD8E0021FF1F /* Sword.swift */; };
 		BAF4327A25E3DDA80021FF1F /* Axe.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF4327925E3DDA80021FF1F /* Axe.swift */; };
 		BAF4327D25E3DF4C0021FF1F /* Warrior.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF4327C25E3DF4C0021FF1F /* Warrior.swift */; };
@@ -39,6 +40,7 @@
 		BA52E05525E13C54000055D7 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		BA52E05C25E1B23C000055D7 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		BA52E05F25E2E6B1000055D7 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		BA72B50925FD3B3F00965267 /* Wand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wand.swift; sourceTree = "<group>"; };
 		BAF4327625E3DD8E0021FF1F /* Sword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sword.swift; sourceTree = "<group>"; };
 		BAF4327925E3DDA80021FF1F /* Axe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axe.swift; sourceTree = "<group>"; };
 		BAF4327C25E3DF4C0021FF1F /* Warrior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warrior.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				BAF4327C25E3DF4C0021FF1F /* Warrior.swift */,
 				BAF4327F25E3DF6C0021FF1F /* Colossus.swift */,
 				BAF4328225E3DF800021FF1F /* Mage.swift */,
+				BA72B50925FD3B3F00965267 /* Wand.swift */,
 				BAF4328525E3DFAA0021FF1F /* Dwarf.swift */,
 			);
 			path = P3_Oc_FightingGames;
@@ -156,6 +159,7 @@
 				BAF4328625E3DFAA0021FF1F /* Dwarf.swift in Sources */,
 				BAF4328025E3DF6C0021FF1F /* Colossus.swift in Sources */,
 				BAF4328325E3DF800021FF1F /* Mage.swift in Sources */,
+				BA72B50A25FD3B3F00965267 /* Wand.swift in Sources */,
 				BA52E05125E12D59000055D7 /* Game.swift in Sources */,
 				BA52E05D25E1B23C000055D7 /* Character.swift in Sources */,
 				BAF4327D25E3DF4C0021FF1F /* Warrior.swift in Sources */,

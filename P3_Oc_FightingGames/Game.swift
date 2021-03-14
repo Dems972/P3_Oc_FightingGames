@@ -27,7 +27,7 @@ class Game
     {
         presentation()
         playerChooseCharacter()
-        //battle()
+        battle()
     }
     
     
@@ -93,11 +93,27 @@ class Game
 
     func battle()
     {
-        print("préparer vous au combat")
+        print("préparer vous au combat\n")
         
-        while player1.characterPlayers.count != 0 || player2.characterPlayers.count != 0
+        while player1.characterPlayers.count != 0 && player2.characterPlayers.count != 0
         {
-            player1.listTeam()
+            print("\(player1.playerName) choisi le personage de ton equipe, puis un personnage ennemis à attaquer.\n")
+            
+            if player1.characterPlayers.count != 0
+            {
+                //player1.listTeam()
+                let myCharacter = player1.selectCharacter(characters: player1.characterPlayers)
+                
+                let opponent = player1.selectCharacter(characters: player2.characterPlayers)
+                myCharacter.attack(enemy: opponent)
+                
+                
+                
+                
+            }
+            
+        
+            
         }
     }
     
