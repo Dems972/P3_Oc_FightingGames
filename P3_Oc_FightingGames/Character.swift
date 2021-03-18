@@ -11,14 +11,19 @@ class Character
 {
     var characterName: String
     var life: Int
+    var heal: Int
     var typeName : String
     var defautWeapon = Weapon(damage: 0)
+    let lifeMaxLimite : Int
     
-    init(characterName: String, life: Int, typeName: String)
+    
+    init(characterName: String, life: Int, heal: Int, typeName: String )
     {
         self.characterName = characterName
         self.life = life
         self.typeName = typeName
+        self.lifeMaxLimite = life
+        self.heal = heal
     }
     
     // je demande a l'utilisateur de saisir le nom de son personage
@@ -38,6 +43,7 @@ class Character
     {
         for character in arrayCharacter
         {
+            //if character.characterName.contains(characterName)
             if character.characterName == characterName
             {
                 print("\n\(characterName) existe deja\n")
@@ -62,7 +68,7 @@ class Character
             print("\(enemy.characterName) a perdu \(defautWeapon.damage) il lui reste \(enemy.life)")
         }
         //verifier si il est en vie faire une methode a par
-        // 
+        
     }
     
 }

@@ -11,7 +11,7 @@ class Colossus : Character
 {
     init()
     {
-        super.init(characterName: "", life: 150, typeName: "Colosse")
+        super.init(characterName: "", life: 150, heal: 10, typeName: "Colosse")
         defautWeapon = Axe()
     }
 }

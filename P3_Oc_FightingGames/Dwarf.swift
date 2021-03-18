@@ -11,7 +11,7 @@ class Dwarf : Character
 {
     init()
     {
-        super.init(characterName: "", life: 80, typeName: "Nain")
+        super.init(characterName: "", life: 80, heal: 15, typeName: "Nain")
         defautWeapon = Axe()
     }
 }

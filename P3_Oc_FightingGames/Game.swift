@@ -95,28 +95,37 @@ class Game
     {
         print("préparer vous au combat\n")
         
-        while player1.characterPlayers.count != 0 && player2.characterPlayers.count != 0
+        while player1.isPlayerAlive() && player2.isPlayerAlive()
         {
             print("\(player1.playerName) choisi le personage de ton equipe, puis un personnage ennemis à attaquer.\n")
             
             if player1.characterPlayers.count != 0
             {
                 //player1.listTeam()
-                let myCharacter = player1.selectCharacter(characters: player1.characterPlayers)
+                let myCharacter = player1.selectCharacter(characters: player1.characterPlayers, select: nil)
                 
-                let opponent = player1.selectCharacter(characters: player2.characterPlayers)
+                let opponent = player1.selectCharacter(characters: player2.characterPlayers, select: myCharacter)
                 myCharacter.attack(enemy: opponent)
                 
-                
-                
-                
             }
-            
-        
-            
+            swap(&player1, &player2)
         }
+        winner()
     }
     
+    func winner()
+    {
+        if (player1.characterPlayers.endIndex != 0)
+        {
+            print("Le joueur 1 n'a plus de personnages dans son équipe")
+            print("Le joueur 2 a gagné")
+        }
+        else
+        {
+            print("Le joueur 2 n'a plus de personnages dans son équipe")
+            print("Le joueur 1 a gagné")
+        }
+    }
     
     
     

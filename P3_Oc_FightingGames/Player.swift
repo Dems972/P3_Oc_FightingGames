@@ -107,17 +107,25 @@ class Player
         }
     }
     
-    func selectCharacter(characters : [Character]) -> Character
+    func selectCharacter(characters : [Character], select: Character?) -> Character
     {
         var perso = Character(characterName: "", life: 0, typeName: "")
         var charselect = false
-        let persona = characters
+        var persona = characters
        
-        print("Veuillez choisir le personnage de votre equipe")
         
         
+        if select != nil
+        {
+            print("Veuillez choisir un personnage de votre adversaire")
+        }
+        else
+        {
+            print("Veuillez choisir le personnage de votre equipe")
+            persona = self.characterPlayers
+        }
         
-        for (index, character)  in characterPlayers.enumerated()
+        for (index, character)  in persona.enumerated()
         {
             print("\(index+1). \(character.characterName) le \(character.typeName) \(character.life) hp \n")
             
@@ -144,5 +152,28 @@ class Player
         return perso
     }
     
+    func isPlayerAlive() -> Bool
+    {
+        let copyCharacterPlayers = characterPlayers
+        
+        for (index, character) in copyCharacterPlayers.enumerated()
+        {
+           if character.life <= 0
+           {
+                characterPlayers.remove(at: index)
+           }
+            
+        }
+        
+        if characterPlayers.isEmpty
+        {
+            return false
+        }
+        else
+        {
+            return true
+        }
+        
+    }
     
 }

@@ -11,7 +11,7 @@ class Warrior : Character
 {
     init()
     {
-        super.init(characterName: "", life: 100, typeName: "Guerrier")
+        super.init(characterName: "", life: 100, heal: 15, typeName: "Guerrier")
         defautWeapon = Sword()
     }
 }

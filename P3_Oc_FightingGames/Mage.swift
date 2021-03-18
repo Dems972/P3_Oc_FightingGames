@@ -11,7 +11,7 @@ class Mage : Character
 {
     init()
     {
-        super.init(characterName: "", life: 70, typeName: "Magicien")
+        super.init(characterName: "", life: 70, heal: 20, typeName: "Magicien")
         defautWeapon = Wand()
     }
 }
