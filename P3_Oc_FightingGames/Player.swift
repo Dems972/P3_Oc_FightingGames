@@ -71,7 +71,7 @@ class Player
                     }
     
                     default:
-                    print("Vous vous êtes trompé/n")
+                    print("Vous vous êtes trompé\n")
                 }
             }
         }
@@ -103,22 +103,21 @@ class Player
         
         for character in characterPlayers
         {
-            print("\(character.characterName),de type: \(character.typeName) avec 1\(character.life)PV\n")
+            print("\(character.characterName),de type: \(character.typeName) avec \(character.life)PV\n")
         }
     }
     
     func selectCharacter(characters : [Character], select: Character?) -> Character
     {
-        var perso = Character(characterName: "", life: 0, typeName: "")
+        var perso = Character(characterName: "", life: 0, heal: 0, typeName: "")
         var charselect = false
         var persona = characters
-       
-        
-        
+ 
         if select != nil
         {
-            print("Veuillez choisir un personnage de votre adversaire")
+            print("Veuillez choisir le personnage de votre adversaire")
         }
+        
         else
         {
             print("Veuillez choisir le personnage de votre equipe")
@@ -127,7 +126,7 @@ class Player
         
         for (index, character)  in persona.enumerated()
         {
-            print("\(index+1). \(character.characterName) le \(character.typeName) \(character.life) hp \n")
+            print("\(index+1). \(character.characterName) le \(character.typeName) \(character.life)PV \n")
             
         }
         
@@ -174,6 +173,11 @@ class Player
             return true
         }
         
+    }
+    
+    func chest()
+    {
+        let randomNumber = Int.random(in: <#T##Range<Int>#>)
     }
     
 }

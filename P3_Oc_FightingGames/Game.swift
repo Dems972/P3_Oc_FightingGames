@@ -97,16 +97,41 @@ class Game
         
         while player1.isPlayerAlive() && player2.isPlayerAlive()
         {
-            print("\(player1.playerName) choisi le personage de ton equipe, puis un personnage ennemis à attaquer.\n")
-            
-            if player1.characterPlayers.count != 0
+            print(" ")
+            print("\(player1.playerName): Entre 1 ou 2 pour choisir entre le mode: ")
+            print("--------------")
+            print(" 1. Attack:")
+            print(" 2. Heal:")
+            print("--------------\n")
+            if let input = readLine()
             {
-                //player1.listTeam()
-                let myCharacter = player1.selectCharacter(characters: player1.characterPlayers, select: nil)
-                
-                let opponent = player1.selectCharacter(characters: player2.characterPlayers, select: myCharacter)
-                myCharacter.attack(enemy: opponent)
-                
+                // On recupere la saisie et on s'assure quelle soit une valeur numerique
+                if let choice = Int(input)
+                {
+                    switch choice
+                    {
+                        case 1:
+                            if player1.characterPlayers.count != 0
+                            {
+                                //player1.listTeam()
+                                let myCharacter = player1.selectCharacter(characters: player1.characterPlayers, select: nil)
+                                
+                                let opponent = player1.selectCharacter(characters: player2.characterPlayers, select: myCharacter)
+                                myCharacter.attack(enemy: opponent)
+                            }
+                        case 2:
+                            if player1.characterPlayers.count != 0
+                            {
+                                //player1.listTeam()
+                                let myCharacter = player1.selectCharacter(characters: player1.characterPlayers, select: nil)
+                                myCharacter.healed(ally: myCharacter)
+                            }
+                      default:
+                        print("Le numero choisit doit être comprit entre 1 et 2")
+                        break
+                    }
+                    
+                }
             }
             swap(&player1, &player2)
         }

@@ -14,7 +14,6 @@ class Character
     var heal: Int
     var typeName : String
     var defautWeapon = Weapon(damage: 0)
-    let lifeMaxLimite : Int
     
     
     init(characterName: String, life: Int, heal: Int, typeName: String )
@@ -22,7 +21,6 @@ class Character
         self.characterName = characterName
         self.life = life
         self.typeName = typeName
-        self.lifeMaxLimite = life
         self.heal = heal
     }
     
@@ -67,8 +65,22 @@ class Character
             enemy.life = enemy.life - defautWeapon.damage
             print("\(enemy.characterName) a perdu \(defautWeapon.damage) il lui reste \(enemy.life)")
         }
-        //verifier si il est en vie faire une methode a par
         
+    }
+    
+    func healed(ally: Character)
+    {
+        print("\(characterName), soigne \(ally.characterName)")
+        
+        if ally.life > 0
+        {
+            ally.life = ally.life + heal
+            print("\(ally.characterName) a recuperer \(heal)pv son total de vie est de :\(ally.life)")
+        }
+        else 
+        {
+            print("\(ally.characterName), na plus de pv il ne peut plus etre soigné")
+        }
     }
     
 }
