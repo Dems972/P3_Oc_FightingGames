@@ -15,6 +15,8 @@ class Game
     //création du J2
     var player2 : Player
     
+    var roundCount = 0
+    
     
     init()
     {
@@ -118,6 +120,7 @@ class Game
                                 
                                 let opponent = player1.selectCharacter(characters: player2.characterPlayers, select: myCharacter)
                                 myCharacter.attack(enemy: opponent)
+                                roundCount+=1
                             }
                         case 2:
                             if player1.characterPlayers.count != 0
@@ -125,6 +128,7 @@ class Game
                                 //player1.listTeam()
                                 let myCharacter = player1.selectCharacter(characters: player1.characterPlayers, select: nil)
                                 myCharacter.healed(ally: myCharacter)
+                                roundCount+=1
                             }
                       default:
                         print("Le numero choisit doit être comprit entre 1 et 2")
@@ -136,11 +140,12 @@ class Game
             swap(&player1, &player2)
         }
         winner()
+        resumGame()
     }
     
     func winner()
     {
-        if (player1.characterPlayers.endIndex != 0)
+        if player1.isPlayerAlive()
         {
             print("Le joueur 1 n'a plus de personnages dans son équipe")
             print("Le joueur 2 a gagné")
@@ -152,6 +157,22 @@ class Game
         }
     }
     
+    func resumGame()
+    {
+        print("====================")
+        print("** Résumer **")
+        print("Nombre de tour \(roundCount)")
+        print("====================")
+        print("info sur les personnages du \(player1.playerName )")
+        player1.listTeam()
+        print("====================")
+        print("info sur les personnages du \(player2.playerName )")
+        player2.listTeam()
+        print("====================")
+        print("Félicitation merci d'avoir joué")
+        print("Fin du jeu")
+        
+    }
     
     
 }

@@ -126,8 +126,10 @@ class Player
         
         for (index, character)  in persona.enumerated()
         {
-            print("\(index+1). \(character.characterName) le \(character.typeName) \(character.life)PV \n")
-            
+            if character.life > 0
+            {
+                print("\(index+1). \(character.characterName) le \(character.typeName) \(character.life)PV \n")
+            }
         }
         
         while charselect == false
@@ -153,18 +155,19 @@ class Player
     
     func isPlayerAlive() -> Bool
     {
-        let copyCharacterPlayers = characterPlayers
+        var cpt = 0
         
-        for (index, character) in copyCharacterPlayers.enumerated()
+        for character in characterPlayers
         {
            if character.life <= 0
            {
-                characterPlayers.remove(at: index)
+                //characterPlayers.remove(at: index)
+                cpt+=1
            }
             
         }
         
-        if characterPlayers.isEmpty
+        if cpt == 3
         {
             return false
         }
@@ -177,7 +180,8 @@ class Player
     
     func chest()
     {
-        let randomNumber = Int.random(in: <#T##Range<Int>#>)
+       // let randomNumber = Int.random(in: <#T##Range<Int>#>)
+        //
     }
     
 }
